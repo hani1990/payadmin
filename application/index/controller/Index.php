@@ -16,11 +16,7 @@ class Index extends Frontend
 
     public function index()
     {
-        $orders = Order::where('createtime' ,'>', time() - 15 * 6000)
-            ->where('status', 'unsettled')
-            ->select();
-        var_dump($orders[0]['id']);
-        exit();
+
         return $this->view->fetch();
     }
 

@@ -6,11 +6,11 @@ $price = '0.01'; # 获取充值金额
 $out_order_id = '1211109';       # 自己创建的本地订单号
 $type = 'alipay';    # 付款方式
 $product_id = '3'; //产品id
-$notifyurl = 'http://payadmin.test/notify_url.php';   # 回调通知地址
-$returnurl = 'http://payadmin.test/return_url.php';   # 支付成功页面跳转地址
+$notifyurl = 'http://pay.xiaojuwangluo.com/notify_url.php';   # 回调通知地址
+$returnurl = 'http://pay.xiaojuwangluo.com/return_url.php';   # 支付成功页面跳转地址
 $extend = 'abc';
 $secret = '123456';     # app secret, 在个人中心配置页面查看
-$api_url = 'http://payadmin.test/addons/pay/api/create';   # 付款请求接口，在个人中心配置页面查看
+$api_url = 'http://pay.xiaojuwangluo.com/addons/pay/api/create';   # 付款请求接口，在个人中心配置页面查看
 
 function sign($data_arr, $secret) {
     return md5(md5(join('',$data_arr)) . $secret);

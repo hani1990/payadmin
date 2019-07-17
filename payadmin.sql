@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 17, 2019 at 04:54 PM
+-- Generation Time: Jul 17, 2019 at 10:01 PM
 -- Server version: 5.7.23
 -- PHP Version: 7.0.32
 
@@ -47,7 +47,7 @@ CREATE TABLE `fa_admin` (
 --
 
 INSERT INTO `fa_admin` (`id`, `username`, `nickname`, `password`, `salt`, `avatar`, `email`, `loginfailure`, `logintime`, `createtime`, `updatetime`, `token`, `status`) VALUES
-(1, 'admin', 'Admin', '075eaec83636846f51c152f29b98a2fd', 's4f3', '/assets/img/avatar.png', 'admin@fastadmin.net', 0, 1563339781, 1492186163, 1563339781, '10f52684-3e24-4e90-9e8c-a863cfa78574', 'normal');
+(1, 'admin', 'Admin', '075eaec83636846f51c152f29b98a2fd', 's4f3', '/assets/img/avatar.png', 'admin@fastadmin.net', 0, 1563368925, 1492186163, 1563368925, '9adb8c3b-0de3-48fa-b97f-47943c414127', 'normal');
 
 -- --------------------------------------------------------
 
@@ -388,7 +388,62 @@ INSERT INTO `fa_admin_log` (`id`, `admin_id`, `username`, `url`, `title`, `conte
 (314, 1, 'admin', '/admin/addon/state', '插件管理 禁用启用', '{\"name\":\"summernote\",\"action\":\"disable\",\"force\":\"0\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563353080),
 (315, 1, 'admin', '/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563353081),
 (316, 1, 'admin', '/admin/addon/uninstall', '插件管理 卸载', '{\"name\":\"summernote\",\"force\":\"0\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563353083),
-(317, 1, 'admin', '/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563353083);
+(317, 1, 'admin', '/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563353083),
+(318, 0, 'Unknown', '/admin/index/login.html', '', '{\"__token__\":\"267e26c72fa69b7c54bae16343bf2626\",\"username\":\"admin\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563368909),
+(319, 1, 'admin', '/admin/index/login.html', '登录', '{\"__token__\":\"cc511f3b4334ee1175fd38bbf191b7ff\",\"username\":\"admin\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563368925),
+(320, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563369142),
+(321, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563369202),
+(322, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563369262),
+(323, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563369322),
+(324, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563369382),
+(325, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563369442),
+(326, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563369502),
+(327, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563369562),
+(328, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563369622),
+(329, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563369682),
+(330, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563369742),
+(331, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563369802),
+(332, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563369862),
+(333, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563369922),
+(334, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563369982),
+(335, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370042),
+(336, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370102),
+(337, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370162),
+(338, 1, 'admin', '/admin/auth/rule/edit/ids/1?dialog=1', '权限管理 菜单规则 编辑', '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"1\",\"pid\":\"0\",\"name\":\"pay\\/statistics\",\"title\":\"\\u63a7\\u5236\\u53f0\",\"icon\":\"fa fa-dashboard\",\"weigh\":\"143\",\"condition\":\"\",\"remark\":\"Dashboard tips\",\"status\":\"normal\"},\"ids\":\"1\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370205),
+(339, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370222),
+(340, 1, 'admin', '/admin/auth/rule/multi/ids/1', '', '{\"action\":\"\",\"ids\":\"1\",\"params\":\"ismenu=0\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370239),
+(341, 1, 'admin', '/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370240),
+(342, 1, 'admin', '/admin/ajax/weigh', '', '{\"ids\":\"238,1,2,6,7,8,3,5,9,10,11,12,4,66,67,73,79,239,240,241,242,243\",\"changeid\":\"238\",\"pid\":\"0\",\"field\":\"weigh\",\"orderway\":\"desc\",\"table\":\"auth_rule\",\"pk\":\"id\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370302),
+(343, 1, 'admin', '/admin/index/index', '', '{\"action\":\"refreshmenu\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370302),
+(344, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370395),
+(345, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370455),
+(346, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370515),
+(347, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370576),
+(348, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370636),
+(349, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370696),
+(350, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370756),
+(351, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370816),
+(352, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370876),
+(353, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370936),
+(354, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563370996),
+(355, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563371056),
+(356, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563371116),
+(357, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563371176),
+(358, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563371236),
+(359, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563371296),
+(360, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563371356),
+(361, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563371416),
+(362, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563371476),
+(363, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563371536),
+(364, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563371596),
+(365, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563371656),
+(366, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563371716),
+(367, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563371776),
+(368, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563371836),
+(369, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563371896),
+(370, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563371956),
+(371, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563372016),
+(372, 1, 'admin', '/admin/pay/statistics/index', '', '{\"date\":\"\"}', '0.0.0.0', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36', 1563372075);
 
 -- --------------------------------------------------------
 
@@ -500,11 +555,11 @@ CREATE TABLE `fa_auth_rule` (
 --
 
 INSERT INTO `fa_auth_rule` (`id`, `type`, `pid`, `name`, `title`, `icon`, `condition`, `remark`, `ismenu`, `createtime`, `updatetime`, `weigh`, `status`) VALUES
-(1, 'file', 0, 'dashboard', 'Dashboard', 'fa fa-dashboard', '', 'Dashboard tips', 1, 1497429920, 1497429920, 143, 'normal'),
-(2, 'file', 0, 'general', 'General', 'fa fa-cogs', '', '', 1, 1497429920, 1497430169, 137, 'normal'),
-(3, 'file', 0, 'category', 'Category', 'fa fa-leaf', '', 'Category tips', 1, 1497429920, 1497429920, 119, 'normal'),
+(1, 'file', 0, 'dashboard', 'Dashboard', 'fa fa-dashboard', '', 'Dashboard tips', 0, 1497429920, 1563370239, 137, 'normal'),
+(2, 'file', 0, 'general', 'General', 'fa fa-cogs', '', '', 1, 1497429920, 1497430169, 119, 'normal'),
+(3, 'file', 0, 'category', 'Category', 'fa fa-leaf', '', 'Category tips', 1, 1497429920, 1497429920, 99, 'normal'),
 (4, 'file', 0, 'addon', 'Addon', 'fa fa-rocket', '', 'Addon tips', 1, 1502035509, 1502035509, 0, 'normal'),
-(5, 'file', 0, 'auth', 'Auth', 'fa fa-group', '', '', 1, 1497429920, 1497430092, 99, 'normal'),
+(5, 'file', 0, 'auth', 'Auth', 'fa fa-group', '', '', 1, 1497429920, 1497430092, 0, 'normal'),
 (6, 'file', 2, 'general/config', 'Config', 'fa fa-cog', '', 'Config tips', 1, 1497429920, 1497430683, 60, 'normal'),
 (7, 'file', 2, 'general/attachment', 'Attachment', 'fa fa-file-image-o', '', 'Attachment tips', 1, 1497429920, 1497430699, 53, 'normal'),
 (8, 'file', 2, 'general/profile', 'Profile', 'fa fa-user', '', '', 1, 1497429920, 1497429920, 34, 'normal'),
@@ -584,7 +639,7 @@ INSERT INTO `fa_auth_rule` (`id`, `type`, `pid`, `name`, `title`, `icon`, `condi
 (82, 'file', 79, 'user/rule/add', 'Add', 'fa fa-circle-o', '', '', 0, 1516374729, 1516374729, 0, 'normal'),
 (83, 'file', 79, 'user/rule/edit', 'Edit', 'fa fa-circle-o', '', '', 0, 1516374729, 1516374729, 0, 'normal'),
 (84, 'file', 79, 'user/rule/multi', 'Multi', 'fa fa-circle-o', '', '', 0, 1516374729, 1516374729, 0, 'normal'),
-(238, 'file', 0, 'pay', '个人收款管理', 'fa fa-circle-o', '', '', 1, 1563282142, 1563282142, 0, 'normal'),
+(238, 'file', 0, 'pay', '个人收款管理', 'fa fa-circle-o', '', '', 1, 1563282142, 1563282142, 143, 'normal'),
 (239, 'file', 238, 'pay/order', '订单管理	', 'fa fa-circle-o', '', '', 1, 1563282166, 1563282166, 0, 'normal'),
 (240, 'file', 238, 'pay/qrcode', '二维码管理', 'fa fa-circle-o', '', '', 1, 1563282183, 1563282183, 0, 'normal'),
 (241, 'file', 238, 'pay/product', '产品管理', 'fa fa-circle-o', '', '', 1, 1563282201, 1563282278, 0, 'normal'),
@@ -1282,7 +1337,7 @@ ALTER TABLE `fa_admin`
 -- AUTO_INCREMENT for table `fa_admin_log`
 --
 ALTER TABLE `fa_admin_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=318;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=373;
 
 --
 -- AUTO_INCREMENT for table `fa_attachment`
@@ -1372,7 +1427,7 @@ ALTER TABLE `fa_test`
 -- AUTO_INCREMENT for table `fa_user`
 --
 ALTER TABLE `fa_user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `fa_user_group`
