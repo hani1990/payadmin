@@ -5,9 +5,6 @@
  * Date: 2019-07-17
  * Time: 13:04
  */
-$data = $_POST;
-file_put_contents('./log', json_encode($data));
-
 
 # 签名函数
 function sign($data_arr, $secret) {
