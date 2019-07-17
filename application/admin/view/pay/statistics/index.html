@@ -1,0 +1,194 @@
+<style>
+    #datefilter {
+        margin:10px 0;
+    }
+</style>
+<div class="panel panel-default panel-intro">
+    {:build_heading()}
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding">
+                    <div class="row">
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>￥{$statistics.todayincome}</h3>
+                                    <p>今日收入</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-rmb"></i>
+                                </div>
+                                <a href="pay/order/index?paytime={:\\fast\\Date::unixtime()}&paytime-operate=>" title="今日收入" class="small-box-footer btn-addtabs">
+                                    查看更多 <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-green">
+                                <div class="inner">
+                                    <h3>{$statistics.todayorders}</h3>
+
+                                    <p>今日订单数</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-navicon"></i>
+                                </div>
+                                <a href="pay/order/index?paytime={:\\fast\\Date::unixtime()}&paytime-operate=>" title="今日订单" class="small-box-footer btn-addtabs">
+                                    查看更多 <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-yellow">
+                                <div class="inner">
+                                    <h3>{$statistics.todayunsettled}</h3>
+
+                                    <p>通知失败的订单数</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-bullhorn"></i>
+                                </div>
+                                <a href="pay/order/index" title="通知失败订单" class="small-box-footer btn-addtabs">
+                                    查看更多 <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+                                    <h3>{$statistics.todaymissing}</h3>
+
+                                    <p>未处理漏单数</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-warning"></i>
+                                </div>
+                                <a href="pay/missing/index?status=unsettled" title="未处理漏单数" class="small-box-footer btn-addtabs">
+                                    查看更多 <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box bg-aqua">
+                                <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">总收入</span>
+                                    <span class="info-box-number">￥{$statistics.totalincome}</span>
+
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 20%"></div>
+                                    </div>
+                                    <span class="progress-description">
+                                        所有支付成功的订单总金额
+                                    </span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box bg-green">
+                                <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">总订单数</span>
+                                    <span class="info-box-number">{$statistics.totalorders}</span>
+
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 20%"></div>
+                                    </div>
+                                    <span class="progress-description">
+                                        所有支付成功的订单总数
+                                      </span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box bg-yellow">
+                                <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">总通知失败的订单数</span>
+                                    <span class="info-box-number">{$statistics.totalunsettled}</span>
+
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 20%"></div>
+                                    </div>
+                                    <span class="progress-description">
+                                        所有通知失败的订单数量
+                                      </span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box bg-red">
+                                <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">总未处理漏单数</span>
+                                    <span class="info-box-number">{$statistics.totalmissing}</span>
+
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 20%"></div>
+                                    </div>
+                                    <span class="progress-description">
+                                    所有未处理漏单数量
+                                  </span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="page-header">
+                                <h4 class="no-margin">订单趋势</h4>
+                            </div>
+                            <div id="datefilter">
+                                <form action="" role="form" novalidate class="form-inline">
+                                    <a href="javascript:;" class="btn btn-primary btn-refresh"><i class="fa fa-refresh"></i></a>
+                                    <a href="javascript:;" class="btn btn-success btn-filter">{:__('Today')}</a>
+                                    <a href="javascript:;" class="btn btn-success btn-filter">{:__('Yesterday')}</a>
+                                    <a href="javascript:;" class="btn btn-success btn-filter">{:__('Last 7 Days')}</a>
+                                    <a href="javascript:;" class="btn btn-success btn-filter">{:__('Last 30 Days')}</a>
+                                    <a href="javascript:;" class="btn btn-success btn-filter">{:__('Last month')}</a>
+                                    <a href="javascript:;" class="btn btn-success btn-filter">{:__('This month')}</a>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        <input type="text" class="form-control input-inline datetimerange" placeholder="指定日期" style="width:270px;" />
+                                    </div>
+                                    <a href="javascript:;" class="btn btn-info btn-amount"><i class="fa fa-cny"></i> <span>{$statistics.amount}</span></a>
+                                </form>
+                            </div>
+                            <div id="echart" style="height:400px;width:100%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
