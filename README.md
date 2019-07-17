@@ -17,3 +17,7 @@ http://fastadmin.test/addons/pay/api/create?price=9.90&out_order_id=12345622&typ
 ##取消订单
 
 http://fastadmin.test/addons/pay/api/cancel
+
+详细说明
+
+https://www.jianshu.com/p/91829ca0395b
