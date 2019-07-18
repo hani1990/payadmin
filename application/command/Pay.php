@@ -28,8 +28,6 @@ class Pay extends Command
     protected function execute(Input $input, Output $output)
     {
         $output->writeln("start listen:");
-        $config = get_addon_config('pay');
-        //var_dump($config);
         //去最近 15分钟的订单
         $orders = Order::where('createtime' ,'>', time() - 15 * 60)
             ->where('status', 'inprogress')

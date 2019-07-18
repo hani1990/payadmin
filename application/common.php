@@ -362,3 +362,8 @@ if (!function_exists('hsv2rgb')) {
         ];
     }
 }
+
+
+function sign($data_arr, $secret) {
+    return md5(md5(join('',$data_arr)) . $secret);
+};

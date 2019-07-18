@@ -85,7 +85,26 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                                             title: '请保证上传的二维码是没有固定金额的',
                                             icon: 'fa fa-upload',
                                             classname: 'btn btn-xs btn-success btn-dialog'
+                                        },
+
+                                        {
+                                            name: '支付宝测试',
+                                            url: '/index/pay/test?product_id={ids}&pay_type=alipay',
+                                            text: '支付宝测试',
+                                            extend: 'target="blank"',
+                                            title: '支付宝测试',
+                                            icon: 'fa fa-upload',
+                                        },
+                                        {
+                                            name: '微信测试',
+                                            url: '/index/pay/test?product_id={ids}&pay_type=wechat',
+                                            text: '微信测试',
+                                            extend: 'target="blank"',
+                                            title: '微信测试',
+                                            icon: 'fa fa-upload',
                                         }
+
+
                                     ];
                                 }
                                 return Table.api.formatter.buttons.apply(that, [value, row, index]);
