@@ -27,7 +27,7 @@ class Pay extends Frontend
         $host = $this->request->host();
         $scheme = $this->request->scheme();
         $host = $scheme . "://".$host;
-        $notifyurl = $host.'/index/pay/notify_url';   # 回调通知地址
+        $notifyurl = $host.'/index/pay/notifyurl';   # 回调通知地址
         $returnurl = $host.'/index/pay/returnurl';   # 支付成功页面跳转地址
         $extend = 'test';
         $config = get_addon_config('pay');
