@@ -3,7 +3,7 @@
 #注意: 使用之前先到  后台上传微信、支付宝App生成的收款二维码
 
 $price = '0.01'; # 获取充值金额
-$out_order_id = '1211109';       # 自己创建的本地订单号
+$out_order_id = rand(1111, 9999);       # 自己创建的本地订单号
 $type = 'alipay';    # 付款方式
 $product_id = '3'; //产品id
 $notifyurl = 'http://pay.xiaojuwangluo.com/notify_url.php';   # 回调通知地址
