@@ -1,0 +1,71 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="alert alert-danger-light">
+        如果上传二维码图片后未正确解码出<b>支付URL</b>，请在插件管理中尝试切换二维码解码方式后再重新上传，你也可以手动解码(<a href="http://t.cn/RlKZbkD" target="_blank">点击前往</a>)将二维码的内容填充到<b>支付URL</b>处
+    </div>
+    <div class="form-group">
+        <label for="c-product_id" class="control-label col-xs-12 col-sm-2">{:__('Product_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-product_id" data-rule="required" data-source="pay/product/index" {:$row.id==1||$row.id==2?'disabled':''} class="form-control selectpage" name="row[product_id]" type="text" value="{$row.product_id}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-type" class="control-label col-xs-12 col-sm-2">{:__('Type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-type" data-rule="required" class="form-control selectpicker" {:$row.id==1||$row.id==2?'disabled':''} name="row[type]">
+                {foreach name="typeList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.type"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-image" class="control-label col-xs-12 col-sm-2">{:__('Image')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-image" class="form-control" size="50" name="row[image]" type="text" placeholder="如果上传二维码后未自动解码支付URL和价格,请手动填写支付URL和金额" value="{$row.image}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-image" class="btn btn-danger plupload" data-input-id="c-image" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-image"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-image"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-image"></ul>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-realprice" class="control-label col-xs-12 col-sm-2">{:__('Url')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-url" data-rule="required" class="form-control" name="row[url]" type="text" value="{$row.url}" placeholder="必须以wxp://或HTTPS://开头">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-realprice" class="control-label col-xs-12 col-sm-2">{:__('Realprice')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-realprice" data-rule="required" class="form-control" step="0.01" {:$row.id==1||$row.id==2?'readonly':''} name="row[realprice]" type="number" value="{$row.realprice}">
+        </div>
+    </div>
+    {if $row.id>2}
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            {foreach name="statusList" item="vo"}
+            <label for="row[status]-{$key}"><input id="row[status]-{$key}" name="row[status]" type="radio" value="{$key}" {in name="key" value="$row.status"}checked{/in} /> {$vo}</label> 
+            {/foreach}
+            </div>
+
+        </div>
+    </div>
+    {/if}
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

@@ -31,6 +31,7 @@ echo '<html>
               <input type="hidden" name="returnurl" value="'.$returnurl.'"/>
               <input type="hidden" name="extend" value="'.$extend.'"/>
               <input type="hidden" name="sign" value="'.$sign.'"/>
+               <input type="hidden" name="format" value="html"/>
           </form>
           <script>document.getElementById("post_data").submit();</script>
       </body>

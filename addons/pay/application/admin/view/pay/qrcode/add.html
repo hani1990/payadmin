@@ -1,0 +1,73 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="alert alert-warning-light">
+        如果上传的二维码识别类型或金额失败，请手动修改类型和金额
+    </div>
+    {if $wechatAdvicePrice || $alipayAdvicePrice}
+    <div class="alert alert-info-light">
+        当前建议你补齐以下金额的二维码：<br>
+        {if $wechatAdvicePrice}
+            <span class="badge">微　信：</span>
+            {volist name="wechatAdvicePrice" id="item"}
+            <span class="badge">{$item}</span>
+            {/volist}
+            <br/>
+        {/if}
+        {if $alipayAdvicePrice}
+            <span class="badge">支付宝：</span>
+            {volist name="alipayAdvicePrice" id="item"}
+            <span class="badge">{$item}</span>
+            {/volist}
+        {/if}
+    </div>
+    {/if}
+    <div class="form-group">
+        <label for="c-product_id" class="control-label col-xs-12 col-sm-2">{:__('Product_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-product_id" data-rule="required" data-source="pay/product/index" readonly class="form-control selectpage"
+                   name="product_id" type="text" value="{$Think.get.product_id}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('固定金额二维码')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-qrcode" class="btn btn-danger plupload"
+                                  data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp"
+                                  data-multiple="true"><i class="fa fa-upload"></i> 请上传固定金额的微信或支付宝收款二维码</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-qrcode"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-qrcode">
+
+            </ul>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
+
+<script type="text/html" id="qrcodetpl">
+    <li class="col-xs-4">
+        <input type="hidden" name="qrcode[<%=index%>][image]" value="<%=image%>"/>
+        <a href="<%=image%>" data-url="<%=image%>" target="_blank" class="thumbnail">
+            <img src="<%=image%>" class="img-responsive">
+        </a>
+        <input type="text" class="form-control" name="qrcode[<%=index%>][url]" value="<%=url%>" placeholder="二维码内容" style="margin-bottom:5px;"/>
+        <div class="input-group" style="margin-bottom:5px;">
+            <span class="input-group-addon no-padding">
+                <select name="qrcode[<%=index%>][type]" class="form-control" style="border: none;height: 100%;width:70px;">
+                    <option value="alipay" <%=type == 'alipay'?'selected':''%>>支付宝</option>
+                    <option value="wechat" <%=type == 'wechat'?'selected':''%>>微信</option>
+                </select>
+            </span>
+            <input type="number" name="qrcode[<%=index%>][realprice]" class="form-control" value="<%=realprice%>" placeholder="金额">
+        </div>
+        <a href="javascript:;" class="btn btn-danger btn-xs btn-trash"><i class="fa fa-trash"></i></a>
+    </li>
+</script>

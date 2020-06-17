@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class=""> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <title>立即支付</title>
+
+    <link rel="stylesheet" media="screen" href="__ADDON__/css/pay.css?v=?v={$site.version}"/>
+    <link rel="stylesheet" media="screen" href="__CDN__/assets/libs/font-awesome/css/font-awesome.min.css?v=?v={$site.version}"/>
+
+    <!--[if lt IE 9]>
+    <script src="__CDN__/libs/html5shiv.js?v=?v={$site.version}"></script>
+    <script src="__CDN__/libs/respond.min.js?v=?v={$site.version}"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="logo {$order.type}"></div>
+    </div>
+    <div class="mainbody">
+        <div class="realprice">￥{$order.realprice}</div>
+        {if $order.discountprice>0}
+        <div class="discountprice"><del>原价:{$order.price}</del>，随机立减￥{$order.discountprice}</div>
+        {/if}
+        <div class="warning {if !$order.manual}hidden{/if}">{:$isWechat ? '长按识别后' : '扫码后'}请务必手动输入金额￥{$order.realprice}</div>
+        <div class="qrcode">
+            <div class="image" id="qrcode" ></div>
+            <div class="logo hidden-xs logo-{$order.type}"></div>
+            <div class="expired hidden"></div>
+            <div class="paid hidden"></div>
+        </div>
+        <div class="remainseconds">
+            <div class="time minutes">
+                <b>{:sprintf('%02d',intval($order['remainseconds']/60))}</b>
+                <em>分</em>
+            </div>
+            <div class="colon">:</div>
+            <div class="time seconds">
+                <b>{:sprintf('%02d',intval($order['remainseconds']%60))}</b>
+                <em>秒</em>
+            </div>
+        </div>
+
+        <div class="help">
+            {$addon.contacttips}
+        </div>
+
+        <div class="tips">
+            {if $isMobile}
+                {if $order.type == 'wechat'}
+                    {if $isWechat}
+                        请长按二维码进行支付
+                    {else /}
+                        请截屏后，打开{$payAppName}，从相册选择二维码图片
+                    {/if}
+                {else /}
+                    {if $isWechat}
+                        请截屏后，打开{$payAppName}，从相册选择二维码图片
+                    {else /}
+                        <a href="{$order.qrcodeurl}" class="btn btn-info btn-lg">启动{$payAppName}进行支付</a>
+                    {/if}
+                {/if}
+            {else /}
+            打开{$payAppName}「扫一扫」
+            {/if}
+        </div>
+    </div>
+
+
+    <script>
+        var order = {$order|json_encode};
+        var addon = {successtips:"{$addon.successtips}", expiretips:"{$addon.expiretips}", jumptips:"{$addon.jumptips}"}
+    </script>
+    <script type="text/javascript" src="__CDN__/assets/libs/jquery/dist/jquery.min.js?v={$site.version}"></script>
+    <script type="text/javascript" src="__ADDON__/js/pay.js?v={$site.version}"></script>
+    <script src="/assets/js/jquery.qrcode.min.js"></script>
+    <script>
+
+
+        jQuery(function(){
+
+            jQuery('#qrcode').qrcode("{$qrcodeUrl}");
+
+        })
+
+    </script>
+
+</div>
+</body>
+</html>
